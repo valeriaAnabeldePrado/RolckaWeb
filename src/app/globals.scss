@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir", sans-serif;
+  font-size: 1.1vw;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/tilt-warp");
+@import url("https://fonts.cdnfonts.com/css/avenir");
+
+//------------------Variables
+$fondoBlanco: #f5f5f5;
+$colorPetroleo: #007e8c;
+$alto: 100vh;
+$altoGenericoDiv: 80vh;
+$fuenteHero: "Tilt Warp", sans-serif;
+$fuente: "Avenir", sans-serif;
+$tamanioFuentH1: 10vw;
+$tamanioFuenteSub: 6vw;
+$tamanioFuenteSubB: 4vw;
+$tamanioFuenteSubC: 3vw;
+$tamanioFuenteSubD: 3.5vw;
+$tamanioFuenteNormal: 1.3em;
+$paddingLateral: 0 12%;
+$paddingLateralTop: 8% 12%;
+$paddingTop: 8% 0;
+
+//---------------------Mixing
+@mixin h1Hero($color) {
+  letter-spacing: 1.2rem;
+  padding: 3%;
+  font-weight: 800;
+  font-family: $fuenteHero;
+  color: $color;
+  font-size: $tamanioFuentH1;
+}
+@mixin divCentrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin contImg($alto, $ancho) {
+  position: relative;
+  align-self: flex-end;
+  height: $alto;
+  width: $ancho;
+  -webkit-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  transition: 200ms all ease-in-out;
+}

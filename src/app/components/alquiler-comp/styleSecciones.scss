@@ -1,0 +1,108 @@
+@import "../../globals.scss";
+.hero-secciones {
+  height: 90vh;
+  padding: $paddingLateralTop;
+  .hero-secciones-h1 {
+    font-size: $tamanioFuenteSubB;
+    width: 90%;
+    margin: 4% 0;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+  .hero-secciones-p {
+    font-size: $tamanioFuenteNormal;
+    width: 65%;
+    margin: 6% 0;
+  }
+  @media screen and (max-width: 2200px) {
+    height: 50vw;
+  }
+}
+//---------secciones--------//
+.secciones-main {
+  padding: $paddingLateralTop;
+
+  .secciones-titulo {
+    font-size: $tamanioFuenteSubB;
+    padding: 0% 3% 3% 0;
+    width: 70%;
+    line-height: 1;
+  }
+  .secciones-subtitulo {
+    font-size: $tamanioFuenteSubC;
+    padding: 0% 3% 3% 0;
+    width: 70%;
+  }
+  .secciones-p {
+    font-size: $tamanioFuenteNormal;
+    font-family: "Avenir", sans-serif;
+  }
+}
+//----para seccion producto solamente----//
+
+.secciones-piletas {
+  margin: 5% 0 0 0;
+}
+//----Galeria----//
+.galeria-main {
+  padding: $paddingLateralTop;
+  background-color: $fondoBlanco;
+  .galeria-h2 {
+    font-size: $tamanioFuenteSubB;
+    padding: 0% 3% 8% 0;
+    width: 70%;
+    line-height: 1;
+  }
+  .galeria-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .galeria-conImagenes {
+      display: flex;
+      margin: 3% 0;
+      gap: 5rem;
+      .contIMG {
+        @include contImg(50vw, 30vw);
+      }
+    }
+  }
+  .espBlanco {
+    height: 25vh;
+    width: 100%;
+    background-color: transparent;
+    @media screen and (max-width: 700px) {
+      height: 15vw;
+    }
+  }
+}
+.grande {
+  @include contImg(70vw, 40vw);
+}
+.chico {
+  @include contImg(30vw, 25vw);
+}
+.desplazamientoAbajo {
+  transform: translateY(300px);
+  @media screen and (max-width: 1000px) {
+    transform: translateY(200px);
+  }
+  @media screen and (max-width: 700px) {
+    transform: translateY(100px);
+  }
+  @media screen and (max-width: 500px) {
+    transform: translateY(30px);
+  }
+}
+.desplazamientoArriba {
+  transform: translateY(-200px);
+  @media screen and (max-width: 1000px) {
+    transform: translateY(-100px);
+  }
+  @media screen and (max-width: 700px) {
+    transform: translateY(-50px);
+  }
+  @media screen and (max-width: 500px) {
+    transform: translateY(-20px);
+  }
+}

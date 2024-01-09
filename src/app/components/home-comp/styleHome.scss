@@ -1,0 +1,351 @@
+@import "../../globals.scss";
+//------MenuNav-------//
+.color {
+  transition: 200ms all ease-in-out;
+  &:hover {
+    color: $colorPetroleo;
+  }
+}
+//--------Hero-----------------//
+.main-hero {
+  height: $alto;
+  display: flex;
+  background: url("/images/backCapa.png") no-repeat center/cover;
+  .izquierda-hero {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .h1-rol {
+      @include h1Hero($fondoBlanco);
+    }
+  }
+
+  .derecha-hero {
+    position: relative;
+    height: 100%;
+    flex: 1;
+    background-color: $fondoBlanco;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .h1-cka {
+      letter-spacing: 1.2rem;
+      padding: 3%;
+      font-weight: 800;
+      font-family: $fuenteHero;
+      color: transparent;
+      font-size: $tamanioFuentH1;
+      background: url("/images/backCapa.png") right;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -text-fill-color: transparent;
+    }
+    .p-hero {
+      position: absolute;
+      width: 70%;
+      left: 3vw;
+      bottom: 10vw;
+    }
+  }
+  @media screen and (max-width: 2200px) {
+    height: 60vw;
+  }
+}
+//---------------sectionA----------------//
+.nuetra-main {
+  height: $altoGenericoDiv;
+  display: flex;
+  background-color: $fondoBlanco;
+  padding: $paddingLateral;
+  .nuestra-p {
+    flex: 1;
+    height: 100%;
+    @include divCentrado;
+    > p {
+      width: 70%;
+      padding: 2rem;
+    }
+  }
+  .nuetra-contImg {
+    flex: 1;
+    height: 100%;
+    @include divCentrado;
+    .nuetra-img {
+      width: 30vw;
+      object-fit: contain;
+      padding: 2rem;
+    }
+  }
+  @media screen and (max-width: 2200px) {
+    height: 45vw;
+  }
+}
+//---------------section Mision Vision----------------//
+.contenedor-mV {
+  height: $altoGenericoDiv;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/backCapa.png") no-repeat center/cover;
+  overflow: hidden;
+  .seccion-mision {
+    padding: 0 8%;
+    position: relative;
+    flex: 1;
+    height: 50%;
+    @include divCentrado;
+    cursor: pointer;
+    > h2 {
+      color: #fff;
+      font-size: $tamanioFuenteSub;
+      left: 8%;
+      position: absolute;
+      top: 35%;
+      transition: 900ms all ease-in-out;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #fff;
+    }
+    .p-mision {
+      transform: translateX(120%);
+      opacity: 0;
+      padding-top: 2rem;
+      color: #fff;
+      transition: 900ms all ease-in-out;
+    }
+    &:hover {
+      .p-mision {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      h2 {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+  }
+  .seccion-vision {
+    padding: 0 8%;
+    position: relative;
+    flex: 1;
+    height: 50%;
+    cursor: pointer;
+    @include divCentrado;
+    > h2 {
+      color: #fff;
+      font-size: $tamanioFuenteSub;
+      right: 8%;
+      position: absolute;
+      top: 30%;
+      transition: 900ms all ease-in-out;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #fff;
+    }
+    .p-vision {
+      transform: translateX(-120%);
+      opacity: 0;
+      text-align: end;
+      padding-top: 2rem;
+      color: #fff;
+      transition: 900ms all ease-in-out;
+    }
+    &:hover {
+      .p-vision {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+      h2 {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+  }
+  hr {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+  @media screen and (max-width: 2200px) {
+    height: 45vw;
+  }
+}
+//---------------section card productos y servicios----------------//
+.main-pyS {
+  background-color: $fondoBlanco;
+  padding: $paddingLateralTop;
+  .h2-pys {
+    text-align: end;
+    font-size: $tamanioFuenteSub;
+    color: #000;
+    line-height: 1;
+  }
+  .containerCard-pys {
+    height: 100vh;
+    padding: 4% 10%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    @media screen and (max-width: 2200px) {
+      height: 60vw;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    padding: 8% 12% 0 8%;
+  }
+}
+//-----CARD-----//
+.cont-card {
+  text-align: center;
+  width: 25vw;
+  height: 75%;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  border-radius: 20px;
+  @media screen and (max-width: 780px) {
+    border-radius: 10px;
+  }
+  > h3 {
+    text-transform: uppercase;
+    font-size: 1.2vw;
+  }
+}
+.cont-img-card {
+  position: relative;
+  width: 10vw;
+  .imagen-card {
+    object-fit: cover;
+  }
+}
+//--botoncito--//
+.botoncito {
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  background-color: transparent;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 200ms all ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+//-----Nuestros clientes----//
+.clientes_main {
+  background-color: $fondoBlanco;
+  padding: 8% 12% 5% 12%;
+  .clientes_h2 {
+    font-size: $tamanioFuenteSub;
+    color: #000;
+    line-height: 1;
+  }
+  .section-logosClientes {
+    padding: 2% 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    .cont-logoClientes {
+      display: flex;
+      flex-wrap: wrap;
+      > div {
+        background-color: #000;
+        height: 5vw;
+        width: 5vw;
+        margin: 2rem;
+      }
+    }
+  }
+}
+//------Footer------//
+.footer-container {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-around;
+  @media screen and (max-width: 2200px) {
+    height: 45vw;
+  }
+}
+.form-container {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-side-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.footer-side-logo {
+  max-width: 250px;
+}
+.footer-side-icons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.footer-side-icons-i {
+  font-size: x-large;
+  padding: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+}
+.iconos-org {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 700px) {
+  .footer-container {
+    padding: $paddingLateral;
+    background-image: url("/images/rolckaLogo.png");
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .footer-side-logo {
+    display: none;
+  }
+  .form-container {
+    align-items: center;
+  }
+
+  .form_form__T25IP {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
