@@ -17,6 +17,7 @@ const HomePyS = () => {
     traslacion: "0",
     colorDelBordeBoton: "#fff",
     colorFuenteBoton: "#fff",
+    bordeBoton: "",
     enlaceBoton: "/alquiler",
   };
 
@@ -32,6 +33,7 @@ const HomePyS = () => {
     traslacion: "15em",
     colorDelBordeBoton: "#000",
     colorFuenteBoton: "#000",
+    bordeBoton: "",
     enlaceBoton: "/productos",
   };
 
