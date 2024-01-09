@@ -47,7 +47,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const borderThickness = windowWidth <= 790 ? "1px" : "3px";
+  const borderThickness = windowWidth <= 790 ? "2px" : "3px";
   return (
     <>
       <div

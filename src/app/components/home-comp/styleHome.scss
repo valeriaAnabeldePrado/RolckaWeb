@@ -30,6 +30,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @media screen and (max-width: 730px) {
+      background-color: transparent;
+    }
     .h1-cka {
       letter-spacing: 1.2rem;
       padding: 3%;
@@ -41,50 +44,66 @@
       background-clip: text;
       -webkit-background-clip: text;
       -text-fill-color: transparent;
+      @media screen and (max-width: 730px) {
+        color: $fondoBlanco;
+        padding: 0;
+      }
     }
     .p-hero {
       position: absolute;
       width: 70%;
       left: 3vw;
       bottom: 10vw;
+      @media screen and (max-width: 900px) {
+        bottom: 3vw;
+      }
+      @media screen and (max-width: 730px) {
+        display: none;
+      }
     }
   }
+
   @media screen and (max-width: 2200px) {
     height: 60vw;
   }
 }
 //---------------sectionA----------------//
 .nuetra-main {
-  height: $altoGenericoDiv;
+  height: auto;
   display: flex;
   background-color: $fondoBlanco;
-  padding: $paddingLateral;
+  padding: $paddingLateralTop;
+  @include divCentrado;
   .nuestra-p {
     flex: 1;
     height: 100%;
-    @include divCentrado;
     > p {
-      width: 70%;
+      width: 100%;
       padding: 2rem;
+
+      @media screen and (max-width: 730px) {
+        text-align: center;
+      }
     }
   }
   .nuetra-contImg {
     flex: 1;
     height: 100%;
+    align-self: center;
     @include divCentrado;
     .nuetra-img {
       width: 30vw;
       object-fit: contain;
       padding: 2rem;
     }
-  }
-  @media screen and (max-width: 2200px) {
-    height: 45vw;
+    @media screen and (max-width: 730px) {
+      display: none;
+    }
   }
 }
 //---------------section Mision Vision----------------//
 .contenedor-mV {
-  height: $altoGenericoDiv;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,10 +111,10 @@
   background: url("/images/backCapa.png") no-repeat center/cover;
   overflow: hidden;
   .seccion-mision {
-    padding: 0 8%;
+    padding: 5% 8%;
     position: relative;
     flex: 1;
-    height: 50%;
+
     @include divCentrado;
     cursor: pointer;
     > h2 {
@@ -118,7 +137,7 @@
     .p-mision {
       transform: translateX(120%);
       opacity: 0;
-      padding-top: 2rem;
+      padding: 2rem 0;
       color: #fff;
       transition: 900ms all ease-in-out;
     }
@@ -134,10 +153,10 @@
     }
   }
   .seccion-vision {
-    padding: 0 8%;
+    padding: 5% 8%;
     position: relative;
     flex: 1;
-    height: 50%;
+
     cursor: pointer;
     @include divCentrado;
     > h2 {
@@ -161,7 +180,7 @@
       transform: translateX(-120%);
       opacity: 0;
       text-align: end;
-      padding-top: 2rem;
+      padding: 2rem 0;
       color: #fff;
       transition: 900ms all ease-in-out;
     }
@@ -180,9 +199,6 @@
     width: 100%;
     height: 2px;
     background-color: #fff;
-  }
-  @media screen and (max-width: 2200px) {
-    height: 45vw;
   }
 }
 //---------------section card productos y servicios----------------//
