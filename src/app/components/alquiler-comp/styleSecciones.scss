@@ -8,14 +8,21 @@
     margin: 4% 0;
     line-height: 1.2;
     font-weight: 800;
+    @media screen and (max-width: 800px) {
+      font-size: $fuenteSubResp;
+      margin: 15% 0;
+    }
   }
   .hero-secciones-p {
     font-size: $tamanioFuenteNormal;
     width: 65%;
     margin: 6% 0;
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
   }
   @media screen and (max-width: 2200px) {
-    height: 50vw;
+    height: auto;
   }
 }
 //---------secciones--------//
@@ -27,15 +34,28 @@
     padding: 0% 3% 3% 0;
     width: 70%;
     line-height: 1;
+    @media screen and (max-width: 800px) {
+      font-size: $fuenteSubResp;
+      width: 100%;
+      padding: 4% 0;
+    }
   }
   .secciones-subtitulo {
     font-size: $tamanioFuenteSubC;
     padding: 0% 3% 3% 0;
     width: 70%;
+    @media screen and (max-width: 800px) {
+      font-size: $fuenteSubRespDos;
+      width: 100%;
+      padding: 10% 0;
+    }
   }
   .secciones-p {
     font-size: $tamanioFuenteNormal;
     font-family: "Avenir", sans-serif;
+  }
+  @media screen and (max-width: 800px) {
+    padding: 12%;
   }
 }
 //----para seccion producto solamente----//
@@ -49,19 +69,29 @@
   background-color: $fondoBlanco;
   .galeria-h2 {
     font-size: $tamanioFuenteSubB;
-    padding: 0% 3% 8% 0;
+    padding: 5% 3% 8% 0;
     width: 70%;
     line-height: 1;
+    @media screen and (max-width: 800px) {
+      font-size: $fuenteSubResp;
+      width: 100%;
+    }
   }
   .galeria-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 800px) {
+      padding: 10% 0;
+    }
     .galeria-conImagenes {
       display: flex;
       margin: 3% 0;
       gap: 5rem;
+      @media screen and (max-width: 550px) {
+        gap: 2rem;
+      }
       .contIMG {
         @include contImg(50vw, 30vw);
       }

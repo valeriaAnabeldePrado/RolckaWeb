@@ -73,7 +73,7 @@ export default function App() {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               color="foreground"
-              className="w-full text-xl color"
+              className="w-full text-xl color mt-5"
               href={item.path}
               size="lg"
             >
