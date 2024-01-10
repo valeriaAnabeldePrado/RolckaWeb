@@ -1,10 +1,23 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import "./styleHome.scss";
 import imgProducto from "@public/images/pngProducto.png";
 import imgAlquiler from "@public/images/pngAlquiler.png";
 import HomeCard from "./Home-Card";
 
 const HomePyS = () => {
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const marginTopTrasla = windowWidth <= 780 ? "0em" : "15em";
   const alquilerProps = {
     rotacion: "-8",
     colorFondo: "#000",
@@ -30,7 +43,7 @@ const HomePyS = () => {
     texto: loremIpsumText,
     imagen: imgProducto,
     nombre: "muestra",
-    traslacion: "15em",
+    traslacion: `${marginTopTrasla}`,
     colorDelBordeBoton: "#000",
     colorFuenteBoton: "#000",
     bordeBoton: "3px",

@@ -124,6 +124,9 @@
       position: absolute;
       top: 35%;
       transition: 900ms all ease-in-out;
+      @media screen and (max-width: 530px) {
+        font-size: 2.8em;
+      }
     }
     &::before {
       content: "";
@@ -166,6 +169,9 @@
       position: absolute;
       top: 30%;
       transition: 900ms all ease-in-out;
+      @media screen and (max-width: 530px) {
+        font-size: $fuenteSubResp;
+      }
     }
     &::after {
       content: "";
@@ -210,25 +216,33 @@
     font-size: $tamanioFuenteSub;
     color: #000;
     line-height: 1;
+    @media screen and (max-width: 530px) {
+      font-size: $fuenteSubResp;
+    }
   }
   .containerCard-pys {
-    height: 100vh;
-    padding: 4% 10%;
+    height: auto;
+    padding: 0 10%;
     display: flex;
     align-self: center;
     justify-content: center;
-    @media screen and (max-width: 2200px) {
-      height: 60vw;
+    @media screen and (max-width: 780px) {
+      flex-direction: column;
+      padding: 12% 10%;
+      :nth-child(2) {
+        align-self: flex-end;
+      }
     }
   }
   @media screen and (max-width: 780px) {
-    padding: 8% 12% 0 8%;
+    padding: 15% 12% 0 12%;
   }
 }
 //-----CARD-----//
 .cont-card {
   text-align: center;
-  width: 25vw;
+  max-width: 450px;
+  min-width: 300px;
   height: 75%;
   padding: 4rem 3rem;
   display: flex;
@@ -238,10 +252,17 @@
   border-radius: 20px;
   @media screen and (max-width: 780px) {
     border-radius: 10px;
+    max-width: 250px;
+    min-width: 150px;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
   }
   > h3 {
     text-transform: uppercase;
     font-size: 1.2vw;
+    @media screen and (max-width: 1150px) {
+      font-size: 1.2rem;
+    }
   }
 }
 .cont-img-card {
@@ -249,6 +270,9 @@
   width: 10vw;
   .imagen-card {
     object-fit: cover;
+  }
+  @media screen and (max-width: 780px) {
+    width: 10vh;
   }
 }
 //--botoncito--//
@@ -267,11 +291,14 @@
 //-----Nuestros clientes----//
 .clientes_main {
   background-color: $fondoBlanco;
-  padding: 8% 12% 5% 12%;
+  padding: 0 12% 5% 12%;
   .clientes_h2 {
     font-size: $tamanioFuenteSub;
     color: #000;
     line-height: 1;
+    @media screen and (max-width: 530px) {
+      font-size: $fuenteSubResp;
+    }
   }
   .section-logosClientes {
     padding: 2% 0;
@@ -280,6 +307,11 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
+    @media screen and (max-width: 780px) {
+      padding: 10% 0;
+      justify-content: center;
+      align-items: center;
+    }
     .cont-logoClientes {
       display: flex;
       flex-wrap: wrap;
@@ -288,8 +320,16 @@
         height: 5vw;
         width: 5vw;
         margin: 2rem;
+        @media screen and (max-width: 530px) {
+          margin: 1rem;
+          height: 5vh;
+          width: 5vh;
+        }
       }
     }
+  }
+  @media screen and (max-width: 530px) {
+    padding: 10% 12% 5% 12%;
   }
 }
 //------Footer------//
