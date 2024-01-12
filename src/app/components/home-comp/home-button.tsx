@@ -1,5 +1,6 @@
 "use client";
 import React, { Children, ReactNode } from "react";
+import { motion } from "framer-motion";
 interface HomeButtonProps {
   children: ReactNode;
   colorBorde: string;
@@ -20,16 +21,21 @@ const HomeButton: React.FC<HomeButtonProps> = ({
 
   return (
     <>
-      <button
+      <motion.button
         onClick={handlerClick}
         className="botoncito"
+        whileHover={{ scale: 1.2 }}
+        transition={{
+          stiffness: 300,
+          type: "spring",
+        }}
         style={{
           border: `${bordeBoton} solid ${colorBorde}`,
           color: `${colorFuente}`,
         }}
       >
         {children}
-      </button>
+      </motion.button>
     </>
   );
 };

@@ -6,7 +6,7 @@ import imgAlquiler from "@public/images/pngAlquiler.png";
 import HomeCard from "./Home-Card";
 
 const HomePyS = () => {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(1600);
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -17,7 +17,8 @@ const HomePyS = () => {
     };
   }, []);
 
-  const marginTopTrasla = windowWidth <= 780 ? "0em" : "15em";
+  const marginTopTrasla = windowWidth <= 780 ? "0" : "15em";
+  console.log(windowWidth);
   const alquilerProps = {
     rotacion: "-8",
     colorFondo: "#000",

@@ -8,9 +8,11 @@
 }
 //--------Hero-----------------//
 .main-hero {
-  height: $alto;
+  height: 100vh;
   display: flex;
+  overflow: hidden;
   background: url("/images/backCapa.png") no-repeat center/cover;
+  background-attachment: fixed;
   .izquierda-hero {
     height: 100%;
     flex: 1;
@@ -63,7 +65,7 @@
     }
   }
 
-  @media screen and (max-width: 2200px) {
+  @media screen and (max-width: 1500px) {
     height: 60vw;
   }
 }
@@ -109,6 +111,7 @@
   justify-content: center;
   align-items: center;
   background: url("/images/backCapa.png") no-repeat center/cover;
+  background-attachment: fixed;
   overflow: hidden;
   .seccion-mision {
     padding: 5% 8%;
@@ -150,7 +153,7 @@
         opacity: 1;
       }
       h2 {
-        transform: translateX(-100%);
+        transform: translateX(-200%);
         opacity: 0;
       }
     }
@@ -196,7 +199,7 @@
         opacity: 1;
       }
       h2 {
-        transform: translateX(100%);
+        transform: translateX(200%);
         opacity: 0;
       }
     }
@@ -283,10 +286,6 @@
   font-size: 1.2em;
   font-weight: 600;
   cursor: pointer;
-  transition: 200ms all ease-in-out;
-  &:hover {
-    transform: scale(1.2);
-  }
 }
 //-----Nuestros clientes----//
 .clientes_main {
