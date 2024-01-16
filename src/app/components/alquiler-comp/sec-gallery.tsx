@@ -1,13 +1,32 @@
+"use client";
 import React from "react";
 import serMuestra from "@public/images/muestraServ.png";
 import Image from "next/image";
-
+import "./styleSecciones.scss";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+} from "framer-motion";
 interface GaleriaProp {
   colorFondo: string;
   colorFuentes: string;
 }
 
 const SecGallery: React.FC<GaleriaProp> = ({ colorFondo, colorFuentes }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const cuadrado = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const cuadradoRosa = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const cuadradochico = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const cuadradochico2 = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   return (
     <>
       <section
@@ -15,35 +34,43 @@ const SecGallery: React.FC<GaleriaProp> = ({ colorFondo, colorFuentes }) => {
         style={{ backgroundColor: `${colorFondo}`, color: `${colorFuentes}` }}
       >
         <h2 className="galeria-h2">Visita nuestra galeria</h2>
-        <div className="galeria-container">
-          <section className="galeria-conImagenes">
-            <div className=" grande">
-              <Image src={serMuestra} alt="muestra" fill />
+        <section className="contDos" ref={ref}>
+          <div className="cont-cuadrado">
+            <motion.div className="cuadrado3" style={{ y: cuadradoRosa }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+            <motion.div className="cuadrado4" style={{ y: cuadrado }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+          </div>
+
+          <div className="cont-cuadrado">
+            <motion.div className="cuadrado4" style={{ y: cuadrado }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+            <motion.div className="cuadrado3" style={{ y: cuadradoRosa }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+          </div>
+
+          <div className="cont-cuadrado">
+            <motion.div className="cuadrado4" style={{ y: cuadradochico }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+            <motion.div className="cuadrado4" style={{ y: cuadradochico2 }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+          </div>
+
+          <div className="cont-cuadrado">
+            <div className="cuadrado3 espacio">
+              <Image src={serMuestra} alt="nombre" fill />
             </div>
-            <div className="contIMG desplazamientoAbajo">
-              <Image src={serMuestra} alt="muestra" fill />
-            </div>
-          </section>
-          <section className="espBlanco"></section>
-          <section className="galeria-conImagenes">
-            <div className="contIMG">
-              <Image src={serMuestra} alt="muestra" fill />
-            </div>
-            <div className="chico">
-              <Image src={serMuestra} alt="muestra" fill />
-            </div>
-          </section>
-          <section className="espBlanco"></section>
-          <section className="galeria-conImagenes">
-            <div className="contIMG desplazamientoAbajo">
-              <Image src={serMuestra} alt="muestra" fill />
-            </div>
-            <div className="grande desplazamientoArriba">
-              <Image src={serMuestra} alt="muestra" fill />
-            </div>
-          </section>
-          <section className="espBlanco"></section>
-        </div>
+            <motion.div className="cuadrado4" style={{ y: cuadrado }}>
+              <Image src={serMuestra} alt="nombre" fill />
+            </motion.div>
+          </div>
+        </section>
       </section>
     </>
   );

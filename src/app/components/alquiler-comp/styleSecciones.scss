@@ -67,9 +67,10 @@
 .galeria-main {
   padding: $paddingLateralTop;
   background-color: $fondoBlanco;
+
   .galeria-h2 {
     font-size: $tamanioFuenteSubB;
-    padding: 5% 3% 8% 0;
+    padding: 0% 3% 8% 0;
     width: 70%;
     line-height: 1;
     @media screen and (max-width: 800px) {
@@ -77,62 +78,42 @@
       width: 100%;
     }
   }
-  .galeria-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @media screen and (max-width: 800px) {
-      padding: 10% 0;
-    }
-    .galeria-conImagenes {
-      display: flex;
-      margin: 3% 0;
-      gap: 5rem;
-      @media screen and (max-width: 550px) {
-        gap: 2rem;
-      }
-      .contIMG {
-        @include contImg(50vw, 30vw);
-      }
-    }
-  }
-  .espBlanco {
-    height: 25vh;
-    width: 100%;
-    background-color: transparent;
-    @media screen and (max-width: 700px) {
-      height: 15vw;
-    }
-  }
 }
-.grande {
-  @include contImg(70vw, 40vw);
+//------------------------
+
+.contDos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.chico {
-  @include contImg(30vw, 25vw);
+.cont-cuadrado {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: -3;
+  height: 100vh;
 }
-.desplazamientoAbajo {
-  transform: translateY(300px);
-  @media screen and (max-width: 1000px) {
-    transform: translateY(200px);
-  }
-  @media screen and (max-width: 700px) {
-    transform: translateY(100px);
-  }
-  @media screen and (max-width: 500px) {
-    transform: translateY(30px);
-  }
+.cuadrado3 {
+  position: relative;
+  margin-right: 2rem;
+  background-color: rgb(242, 0, 255);
+  height: 80vh;
+  width: 30vw;
+  -webkit-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
 }
-.desplazamientoArriba {
-  transform: translateY(-200px);
-  @media screen and (max-width: 1000px) {
-    transform: translateY(-100px);
-  }
-  @media screen and (max-width: 700px) {
-    transform: translateY(-50px);
-  }
-  @media screen and (max-width: 500px) {
-    transform: translateY(-20px);
-  }
+.cuadrado4 {
+  position: relative;
+  margin-right: 2rem;
+  background-color: rgb(205, 157, 141);
+  height: 50vh;
+  width: 20vw;
+  -webkit-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 38px -22px rgba(0, 0, 0, 0.75);
+}
+.espacio {
+  margin-bottom: 3em;
 }

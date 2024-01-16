@@ -1,12 +1,29 @@
+"use client";
 import React from "react";
 import SecHeroPages from "../components/alquiler-comp/sec-heroPages";
 import SecSeccionesPages from "../components/alquiler-comp/sec-seccionesPages";
 import SecGallery from "../components/alquiler-comp/sec-gallery";
 import HomeFooter from "../components/home-comp/home-footer";
 import datos from "../components/alquiler-comp/datosAlquiler";
+import Lenis from "@studio-freight/lenis";
+import { useEffect } from "react";
+import "../globals.scss";
 
 const Alquiler = () => {
   const { datosHero, datosSecciones } = datos;
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    lenis.on("scroll", (e: any) => {});
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <>
       {datosHero.map((item, index) => (

@@ -3,7 +3,7 @@ import React from "react";
 import { useRef, useEffect, useState } from "react";
 import "./styleHome.scss";
 import Image from "next/image";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import logoMuestra from "@public/images/logos/logoRolckaNegro.png";
 
 const variantContenedor = {

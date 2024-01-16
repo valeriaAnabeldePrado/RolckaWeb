@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "../components/alquiler-comp/styleSecciones.scss";
 import SecHeroPages from "../components/alquiler-comp/sec-heroPages";
